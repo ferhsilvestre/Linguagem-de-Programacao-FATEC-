@@ -3,8 +3,8 @@
 def jogo():
     hora_inicio = int(input("Informe, com um número inteiro, apenas a HORA que você iniciou o jogo: "))
     minuto_inicio = int(input("Informe, com um número inteiro, apenas o MINUTO que você iniciou o jogo: "))
-    hora_fim = int(input("Informe, com um número inteiro, apenas a HORA que você iniciou o jogo: "))
-    minuto_fim = int(input("Informe, com um número inteiro, apenas o MINUTO que você iniciou o jogo: "))
+    hora_fim = int(input("Informe, com um número inteiro, apenas a HORA que você finalizou o jogo: "))
+    minuto_fim = int(input("Informe, com um número inteiro, apenas o MINUTO que você finalizou o jogo: "))
 
     if minuto_fim < minuto_inicio:
         minuto_fim += 60
