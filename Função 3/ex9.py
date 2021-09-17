@@ -22,8 +22,7 @@ def media():
     return sum(idade_pc) / len(idade_pc)
 
 def maior():
-    maior_idade = [idade[i] for i in range(len(idade)) if idade[i] > i]
-    return max(maior_idade)
+    return max(idade)
 
 def criterio():
     feminino = [i for i in range(len(idade)) if idade[i] >= 18 if idade[i] <= 35 if cabelo[i] == "L" if olho[i] == "A"]
