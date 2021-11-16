@@ -23,7 +23,6 @@ contas = []
 def cadastrar_contas():
     if len(contas) == 15:
         print('\nVocê atingiu o limite de cadastros!')
-        main()
     
     else:
         cadastro = Conta_Bancaria()
@@ -36,7 +35,6 @@ def cadastrar_contas():
             cadastro.nome_titular = input('Nome do titular: ')
             cadastro.saldo = float(input('Informe o saldo: '))
             contas.append(cadastro)
-        main()
 
 def visualizar_contas():
     for cadastro in contas:
@@ -45,7 +43,6 @@ def visualizar_contas():
         print('Nome do titular:', cadastro.nome_titular)
         print(f'Saldo: {cadastro.saldo:.2f}')
         print('-' * 50)
-    main()
 
 def consulta_nome():
     nome = input('\nInforme o nome do titular da conta para buscar: ').upper()
@@ -63,15 +60,13 @@ def consulta_nome():
     
     if busca == False:
         print('\nTitular não cadastrado')            
-    main()
 
 def alterar_nome_saldo():
     pesquisa = int(input('\nDigite o número da conta que quer alterar: '))
     for cadastro in contas:
         if pesquisa == cadastro.numero_conta:
             cadastro.nome_titular = input('Insira um novo nome do titular: ')
-            cadastro.saldo = float(input('Informe o novo valor de saldo: '))
-    main()
+            cadastro.saldo = float(input('Informe o novo valor de saldo: '))   
 
 def excluir_conta_menor():
     menor = None
@@ -85,7 +80,7 @@ def excluir_conta_menor():
             posicao = i
     contas.pop(posicao)
     print(f'\nConta com saldo de R$ {menor:.2f} excluída!')
-    main()                    
+                        
 
 def menu():
     print()
@@ -101,27 +96,29 @@ def menu():
     return opcao
 
 def main():
-    opcao = menu()
-    if opcao == 1:
-        cadastrar_contas()
+    opcao = 0
+    while opcao != 6:
+        opcao = menu()
+        if opcao == 1:
+            cadastrar_contas()
 
-    elif opcao == 2:
-        visualizar_contas()
+        elif opcao == 2:
+            visualizar_contas()
 
-    elif opcao == 3:
-        consulta_nome()
+        elif opcao == 3:
+            consulta_nome()
 
-    elif opcao == 4:
-        alterar_nome_saldo()
+        elif opcao == 4:
+            alterar_nome_saldo()
 
-    elif opcao == 5:
-        excluir_conta_menor()
+        elif opcao == 5:
+            excluir_conta_menor()
 
-    elif opcao == 6:
-        print('\nSaindo')
+        elif opcao == 6:
+            print('\nSaindo')
 
-    else:
-        print('\nEssa opção é inválida, por favor selecione uma opção válida!')
-        main()
+        else:
+            print('\nEssa opção é inválida, por favor selecione uma opção válida!')
+            
 
 main()

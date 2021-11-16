@@ -18,7 +18,6 @@ alunos = []
 def cadastrar_alunos():
     if len(alunos) == 500:
         print('\nVocê atingiu o limite de cadastros!')
-        main()
     
     else:
         cadastro = Cadastro()
@@ -29,7 +28,6 @@ def cadastrar_alunos():
         cadastro.endereco = input('Endereço: ')
         cadastro.serie_atual = input('Série atual: ')
         alunos.append(cadastro)
-        main()
 
 def consulta_nome():
     nome = input('\nDigite o nome do aluno para buscar: ').upper()
@@ -49,7 +47,6 @@ def consulta_nome():
     
     if busca == False:
         print('\nAluno não cadastrado')            
-    main()
 
 def visualizar_dados():
     for cadastro in alunos:
@@ -60,7 +57,6 @@ def visualizar_dados():
         print('Endereço:', cadastro.endereco)
         print('Série:', cadastro.serie_atual)
         print('-' * 50)
-    main()
 
 def menu():
     print()
@@ -74,23 +70,22 @@ def menu():
     return opcao
 
 def main():
-    opcao = menu()
-    if opcao == 1:
-        cadastrar_alunos()
+    opcao = 0
+    while opcao != 4:
+        opcao = menu()
+        if opcao == 1:
+            cadastrar_alunos()
 
-    elif opcao == 2:
-        consulta_nome()
+        elif opcao == 2:
+            consulta_nome()
 
-    elif opcao == 3:
-        visualizar_dados()
+        elif opcao == 3:
+            visualizar_dados()
 
-    elif opcao == 4:
-        print('\nSaindo')
+        elif opcao == 4:
+            print('\nSaindo')
 
-    else:
-        print('\nEssa opção é inválida, por favor selecione uma opção válida!')
-        main()
-    
-    
-
+        else:
+            print('\nEssa opção é inválida, por favor selecione uma opção válida!')
+       
 main()
