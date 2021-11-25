@@ -21,7 +21,7 @@ def imc(tabela):
     for i in range(len(tabela)):
         f = Futebol_Imc()
         f.posicao = tabela[i][0]
-        f. altura = float(tabela[i][1])
+        f.altura = float(tabela[i][1])
         f.peso = float(tabela[i][2])
         f.imc = (f.peso / (f.altura**2))
         tabela.append(f)
